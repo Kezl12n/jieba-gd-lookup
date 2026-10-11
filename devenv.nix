@@ -13,7 +13,7 @@
 
   scripts.lookup-parser = {
     exec = ''
-         $VIRTUAL_ENV/bin/python3 ${./src}/main.py "$@"
+         uv run python3 src/main.py "$@"
     '';
    
     
@@ -23,6 +23,7 @@
   languages.python = {
     enable = true;
     uv.enable = true;
+    uv.sync.enable = true;
     lsp.enable = true;
     venv = {
       enable = true;
