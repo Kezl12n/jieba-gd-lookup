@@ -1,5 +1,6 @@
 
-import jieba, urllib.parse, sys, os
+import jieba, urllib.parse, sys, os, argparse
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 dict_path = os.path.join(BASE_DIR,  "dict", "dict.txt.big")
@@ -12,10 +13,24 @@ if len(sys.argv) < 2:
 
 text = sys.argv[1]
 
+# Initialize arg
+parser = argparse.ArgumentParser(description="Giving out selections.")
 
-# Search text
+# Define args
+parser.add_argument("text", type=str, nargs="?", default="", help="Input text to parse.")
 
-sent = jieba.lcut_for_search(text)
+parser.add_argument("-i", "--index", action="store_true", help="Use search mode for indexing sub-words")
+
+args = parser.parse_args()
+
+
+
+# Default: accurate mode (akin to parsing sentences)
+sent = jieba.lcut(text)
+
+if args.index:
+   sent = jieba.lcut_for_search(text)
+
 
 
 ## Remove punctations/symbols
@@ -39,8 +54,11 @@ def html_parser(input_text):
         link = f'<a href="gdlookup://localhost/{encoded}" style="text-decoration:none;color:blue;">{char}</a>'
         links.append(link)
 
-    body = " / ".join(links)
-    return f'<div style="font-size: 40px; line-height: 1.8;">{body}</div>'
+    body = "  ".join(links)
+
+    # Triple quotes = ignore single or double quotes inside the string
+    return f"""<div style="font-size: 40px; line-height: 1.8; font-family: system-ui, 'Noto Sans CJK SC', 'Noto Sans CJK TC', sans-serif;">{body}</div>"""
+
 
 
     
