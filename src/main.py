@@ -1,9 +1,17 @@
 
-import jieba, urllib.parse
+import jieba, urllib.parse, sys, os
 
-jieba.set_dictionary('dict/dict.txt.big')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+dict_path = os.path.join(BASE_DIR,  "dict", "dict.txt.big")
 
-text = "这是一个没有字典的例子"
+jieba.set_dictionary(dict_path)
+
+if len(sys.argv) < 2:
+    print("Error: Add a text string.")
+    sys.exit(1)
+
+text = sys.argv[1]
+
 
 # Search text
 
@@ -14,19 +22,33 @@ sent = jieba.lcut_for_search(text)
 
 clean_sent = [l for l in sent if l.isalnum()]
 
-def html_parser(input_text):
-    output = '<div style="font-size: 20px; line-height: 1.8;">'
 
+
+def html_parser(input_text):
+   
+    # Array for seperating words
+    links = []
     for char in input_text:
-        if char.isspace():
-            output += " "
+        
+        char = char.strip()
+        if not char:
             continue
         
         encoded = urllib.parse.quote(char)
 
-        output += f'<a href="gdlookup://localhost?word={encoded}" style="text-decoration:none;color:blue;">{char}</a>'
+        link = f'<a href="gdlookup://localhost/{encoded}" style="text-decoration:none;color:blue;">{char}</a>'
+        links.append(link)
 
-    output += '</div>'
-    return output
+    body = " / ".join(links)
+    return f'<div style="font-size: 40px; line-height: 1.8;">{body}</div>'
 
-print(html_parser(clean_sent))
+
+    
+
+result = html_parser(clean_sent)
+
+output = sys.stdout.buffer.write(result.encode('utf-8'))
+
+
+
+

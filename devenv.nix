@@ -10,6 +10,14 @@
   # https://devenv.sh/basics/
   env.GREET = "devenv";
 
+
+  scripts.lookup-parser = {
+    exec = ''
+         $VIRTUAL_ENV/bin/python3 ${./src}/main.py "$@"
+    '';
+   
+    
+  };
   
   
   languages.python = {
