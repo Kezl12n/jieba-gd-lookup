@@ -1,0 +1,23 @@
+[build-system]
+requires = ["uv-build", "setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "jieba-gd-lookup"
+version = "0.1.0"
+description = "Produce clickable & parsable words in any sent for GoldenDict with Jieba."
+dependencies = [
+  "jieba"  
+]
+
+[project.scripts]
+jieba-gd-lookup = "jieba_gd_lookup.__main__:run"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jieba-gd-lookup"]
+
+
+[tool.uv.extra-build-dependencies]
+jieba = ["setuptools"]

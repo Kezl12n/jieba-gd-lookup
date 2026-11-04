@@ -6,6 +6,10 @@
   ...
 }:
 
+let
+    jiebaScript = config.languages.python.import ./. {};
+in
+
 {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
@@ -60,6 +64,10 @@
     hello         # Run scripts directly
     git --version # Use packages
     
+  '';
+
+  scripts.jieba-gd-lookup.exec = ''
+    ${jiebaScript}/bin/jieba-gd-lookup "$@"
   '';
 
   # https://devenv.sh/tasks/

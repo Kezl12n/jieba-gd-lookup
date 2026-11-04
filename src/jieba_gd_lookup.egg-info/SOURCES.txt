@@ -1,0 +1,10 @@
+pyproject.toml
+src/jieba_gd_lookup/__init__.py
+src/jieba_gd_lookup/__main__.py
+src/jieba_gd_lookup/main.py
+src/jieba_gd_lookup.egg-info/PKG-INFO
+src/jieba_gd_lookup.egg-info/SOURCES.txt
+src/jieba_gd_lookup.egg-info/dependency_links.txt
+src/jieba_gd_lookup.egg-info/entry_points.txt
+src/jieba_gd_lookup.egg-info/requires.txt
+src/jieba_gd_lookup.egg-info/top_level.txt

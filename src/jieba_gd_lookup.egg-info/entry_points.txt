@@ -1,0 +1,2 @@
+[console_scripts]
+jieba-gd-lookup = jieba_gd_lookup.__main__:run

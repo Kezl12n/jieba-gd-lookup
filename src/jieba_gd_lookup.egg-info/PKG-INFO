@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: jieba-gd-lookup
+Version: 0.1.0
+Summary: Produce clickable & parsable words in any sent for GoldenDict with Jieba.
+Requires-Dist: jieba
