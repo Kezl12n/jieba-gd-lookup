@@ -18,8 +18,14 @@
           imports = [ ./devenv.nix ];
         };
 
-        # Extract the exact script from the compiled devenv shell into a pure package output
-        packages.default = config.devenv.shells.default.config.scripts.jieba-gd-lookup.package;
+        packages.default = pkgs.writers.writePython3Bin "jieba-gd-lookup" {
+          libraries = [ 
+            pkgs.python3Packages.jieba 
+          ];
+
+          sys.path.insert(0, "${./src}")
+          runpy.run_module("jieba_gd_lookup", run_name="__main__")
+        }         
       };
     };
 }
