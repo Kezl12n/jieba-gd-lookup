@@ -7,7 +7,7 @@ It's intended to reinforce the options of sentence mining for the program.
 <img width="775" height="1029" alt="image" src="https://github.com/user-attachments/assets/54b82414-829a-4a59-b9ab-d699ff62664f" />
 
 ## Operation
-It uses jieba to parse the sentence, and make all the parsed sentence clickable, then display the result on the program. 
+It uses jieba to parse the sentence, and make all the words clickable, then display the result on the program. 
 
 
 ## Features
