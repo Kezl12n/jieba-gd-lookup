@@ -20,17 +20,17 @@
 
         packages.default = pkgs.python3Packages.buildPythonApplication {
           pname = "jieba-gd-lookup";
-	  version = "0.1.0";
-	  src = ./.;
+	        version = "0.1.1";
+	        src = ./.;
 	
-	  pyproject = true;
+	        pyproject = true;
 	
-	  build-system = [
-	    pkgs.python3Packages.setuptools
-      pkgs.python3Packages.uv-build
-	  ];
+	        build-system = [
+	          pkgs.python3Packages.setuptools
+            pkgs.python3Packages.uv-build
+	        ];
 
-	  dependencies = [ 
+	        dependencies = [ 
             pkgs.python3Packages.jieba 
           ];
         };         
