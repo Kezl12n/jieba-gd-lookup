@@ -31,6 +31,7 @@
 
 	  dependencies = [ 
             pkgs.python3Packages.jieba 
+	    pkgs.python3Packages.uv-build
           ];
         };         
       };
