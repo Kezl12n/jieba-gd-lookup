@@ -27,7 +27,7 @@
 	
 	  build-system = [
 	    pkgs.python3Packages.setuptools
-            pkgs.python3Packages.uv-build
+      pkgs.python3Packages.uv-build
 	  ];
 
 	  dependencies = [ 
