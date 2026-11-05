@@ -20,7 +20,7 @@
 
         packages.default = pkgs.python3Packages.buildPythonApplication {
           pname = "jieba-gd-lookup";
-	        version = "0.1.1";
+	        version = "0.1.2";
 	        src = ./.;
 	
 	        pyproject = true;

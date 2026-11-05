@@ -36,7 +36,7 @@ def run():
             raise ValueError("Error: User dictionary path cannot be empty.")
 
         if os.path.exists(cleaned_path):
-            jieba.load.userdict(cleaned_path)
+            jieba.load_userdict(cleaned_path)
         else:
             print(f"""
               <div style="padding: 15px; background-color: #ffebee; border: 1px solid #f44336; border-radius: 4px; color: #c62828; font-family: sans-serif;">
