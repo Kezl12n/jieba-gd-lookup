@@ -1,14 +1,27 @@
 # Description
 
 This is a simple python script for looking up Chinese sentences in GoldenDict-ng with jieba.
-<img width="837" height="956" alt="image" src="https://github.com/user-attachments/assets/1c1cd251-81f9-496f-977a-de4b5fc60fd0" />
 
+## Features
+- Accurate mode (similar to usual sentence splitting)
+- Search engine mode (similar to accurate but it includes splitting the long words into fragments)
+- Has a mono character option (for looking up single characters only. useful for Classical Chinese)
 
-## Setup for GoldenDict
+To learn more about those features: [About segmentation mode](https://github.com/fxsjy/jieba/tree/master#main-functions)
+
+## Dictionary
+By default, it's already using a big dictionary from jieba's repo to support all characters.
+
+Main dictionary source: [dict.txt.big](https://github.com/fxsjy/jieba/blob/master/extra_dict/dict.txt.big)
+
+It is possible to change the main dictionary with the ```-d ``` flag. User dictionary is possible with a ``-u`` flag.
+
+## Setup for GoldenDict-ng
 1. Go to Preferences => Sources => Programs and make an external program using the script (you can add command line flags for it)
-<img width="836" height="49" alt="image" src="https://github.com/user-attachments/assets/ae7e0b23-e7b3-41b1-8d07-98797ceeb18f" /> 
+<img width="775" height="1029" alt="image" src="https://github.com/user-attachments/assets/54b82414-829a-4a59-b9ab-d699ff62664f" />
 
-2. Go to Groups then make sure the extern program with jieba-gd-lookup is at the top
+
+2. Go to Groups then make sure the external program (/w jieba-gd-lookup) is at the top
 <img width="426" height="207" alt="image" src="https://github.com/user-attachments/assets/5d445d85-d2c4-4046-964a-8c9ad4669ec8" />
 
 
