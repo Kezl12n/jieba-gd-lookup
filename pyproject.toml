@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "jieba-gd-lookup"
 version = "0.1.0"
-description = "Produce clickable & parsable words in any sent for GoldenDict with Jieba."
+description = "Produce clickable words and parse any sent for GoldenDict(-ng) with Jieba."
 dependencies = [
   "jieba"  
 ]

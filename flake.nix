@@ -18,14 +18,21 @@
           imports = [ ./devenv.nix ];
         };
 
-        packages.default = pkgs.writers.writePython3Bin "jieba-gd-lookup" {
-          libraries = [ 
+        packages.default = pkgs.python3Packages.buildPythonApplication {
+          pname = "jieba-gd-lookup";
+	  version = "0.1.0";
+	  src = ./.;
+	
+	  pyproject = true;
+	
+	  build-system = [
+	    pkgs.python3Packages.setuptools
+	  ];
+
+	  dependencies = [ 
             pkgs.python3Packages.jieba 
           ];
-
-          sys.path.insert(0, "${./src}")
-          runpy.run_module("jieba_gd_lookup", run_name="__main__")
-        }         
+        };         
       };
     };
 }
