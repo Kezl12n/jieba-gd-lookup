@@ -27,11 +27,11 @@
 	
 	  build-system = [
 	    pkgs.python3Packages.setuptools
+            pkgs.python3Packages.uv-build
 	  ];
 
 	  dependencies = [ 
             pkgs.python3Packages.jieba 
-	    pkgs.python3Packages.uv-build
           ];
         };         
       };
