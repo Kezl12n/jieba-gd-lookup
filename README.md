@@ -2,12 +2,12 @@
 
 This is a simple python script for looking up Chinese sentences in GoldenDict-ng.
 
+It's intended to reinforce the options of sentence mining for the program.
+
 <img width="775" height="1029" alt="image" src="https://github.com/user-attachments/assets/54b82414-829a-4a59-b9ab-d699ff62664f" />
 
 ## Operation
 It uses jieba to parse the sentence, and make all the parsed sentence clickable, then display the result on the program. 
-
-This script is intended to reinforce the options of sentence mining.
 
 
 ## Features
@@ -30,7 +30,7 @@ It is possible to change the main dictionary with the ```-d ``` flag. User dicti
 <img width="836" height="49" alt="image" src="https://github.com/user-attachments/assets/ae7e0b23-e7b3-41b1-8d07-98797ceeb18f" /> 
 
 
-3. Go to Groups then make sure the external program (/w jieba-gd-lookup) is at the top
+2. Go to Groups then make sure the external program (/w jieba-gd-lookup) is at the top
 
 <img width="426" height="207" alt="image" src="https://github.com/user-attachments/assets/5d445d85-d2c4-4046-964a-8c9ad4669ec8" />
 
