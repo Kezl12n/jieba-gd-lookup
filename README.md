@@ -18,7 +18,7 @@ It uses jieba to parse the sentence, and make all the words clickable, then disp
 To learn more about those features: [About segmentation mode](https://github.com/fxsjy/jieba/tree/master#main-functions)
 
 ## Dictionary settings
-By default, it's already using a big dictionary from jieba's repo to support all characters.
+By default it uses a huge dictionary from jieba's repo to support all characters and also to ensure convenience. 
 
 Main dictionary source: [dict.txt.big](https://github.com/fxsjy/jieba/blob/master/extra_dict/dict.txt.big)
 
